@@ -1,0 +1,27 @@
+First of all I have created a cpp file for coverage(file named P.cpp).
+Now I had run the file with command 
+g++ -Wall -g -fprofile-arcs -ftest-coverage ./test/P.cpp -o P.
+Now we can see 2 files created namely P,P.gcno.
+Now I wrote generate.sh file which takes a binary file, n(no. of test cases) as inputs and generates n random test cases and prints them to file T.
+I used shuf command to generate random numbers.
+Now I had written reduce scripts namely reduce.sh and reduce.cpp which are resplonsible for reduction of test cases.
+reduce.sh runs within the reduce.cpp.
+reduce.cpp takes P(binary file),k(no. of maximum final test cases),./test/T(test suite) as inputs and stores the reduced test cases in a file named ./test/S.
+Algorithm is 
+At an iteration we have a set of test cases(say 'Tests') and in the next iteration we select a test case(say t) from remaining test cases such that set of Tests and t constitute maximum coverage possible.
+I have created 3 temporary files(temp1.txt,temp2.txt,temp3.txt) that get deleted after execution of reduce.cpp.
+reduce.cpp adds the Tests and a test from remaining tests to temp1.txt.
+reduce.sh runs inputs in temp1.txt and outputs coverage wrt them to temp2.txt.(it also epties the temp1.txt)
+reduce.cpp reads value from temp2.txt to know coverage wrt it.
+Now it compares coverage value with every remaining test case and adds the test case that gives maximum coverage when ran with test cases in Tests set.
+Now I have run the following commands in terminal to get output.
+g++  -Wall -g -fprofile-arcs -ftest-coverage ./test/P.cpp -o P
+./generate.sh #giving necessary inputs when asked
+g++ reduce.cpp -o reduce
+./reduce #giving necessary inputs when asked
+
+Now I have got the outputs of whole coverage and reduced coverage.
+(reduced coverage represents coverage wrt test cases in set 'Tests' finally)
+We can look the file S to get the values of test cases in 'Tests'.
+I have also stores all the outputs to a file "outputs.txt".
+I took n=100 and k=7 and got 4 test cases in S.
