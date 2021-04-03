@@ -11,5 +11,5 @@ for ((i=1; i<=n; i++)); do
     a=$(( $a-2147483648 ))
     b=$(shuf -i $min-$max -n 1)
     b=$(( $b-2147483648 ))
-    echo "$a $b">>test/T
+    echo "$a $b">>T
 done
