@@ -109,8 +109,8 @@ int main(){
     cout<<"coverage of reduced tests = "<<coverage<<"\n";
 
     //output storing
-    system("echo -n "">test/S");
-    fstream test_out("test/S");
+    system("echo -n "">S");
+    fstream test_out("S");
     for(int i=0;i<added_test_cases.size();i++){
         test_out<<test_suite[added_test_cases[i]][0]<<" "
                 <<test_suite[added_test_cases[i]][1]<<"\n";
