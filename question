@@ -1,5 +1,5 @@
 Objective:
-Given a program, your �rst task is to create a test-suite by randomly generating n test-cases. Now given this test-
+Given a program, your first task is to create a test-suite by randomly generating n test-cases. Now given this test-
 suite, you are supposed to construct a reduced test-suite by selecting a subset of k test cases such that the branch-
 coverage of the program in the reduced test-suite stays as close as possible to the original test-suite. Hence, the
 goal is to reduce the cost of testing (size of a test-suite) while maintaining the quality (branch coverage). The steps
@@ -16,9 +16,9 @@ Deliverables:
 A script named generate.
 A script named reduce.
 A directory named test containing a sample program P that you wrote yourself to experiment with the scripts
-mentioned above, a �le named T containing the randomly generated test cases on P and another �le named S
+mentioned above, a file named T containing the randomly generated test cases on P and another file named S
 containing the reduced test-suite.
-A report �le containing detailed explanation of the solution.
+A report file containing detailed explanation of the solution.
 Some important comments
 Experiment with the sample program P and the parameters n and k to come up with a good example.
 You are free to use any language to accomplish the given objectives.
