@@ -46,3 +46,21 @@ Now create the binary file of the P.cpp as P by bash command(it also creates P.g
 ```bash
 g++ -Wall -g -fprofile-arcs -ftest-coverage ./P.cpp -o P
 ```
+Now run the generate.sh file which creates a test suite of length given by us. The code for generate.sh is \
+```bash
+#!/bin/bash
+echo "Give the program file name(binary file):"
+read Program_file
+echo "Give value of n:"
+read n
+min=0
+max=4924967295
+echo -n "">T
+for ((i=1; i<=n; i++)); do
+    a=$(shuf -i $min-$max -n 1)
+    a=$(( $a-2147483648 ))
+    b=$(shuf -i $min-$max -n 1)
+    b=$(( $b-2147483648 ))
+    echo "$a $b">>T
+done
+```
